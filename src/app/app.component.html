@@ -4,7 +4,24 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<h2>Jorge Armando Morales Sarmiento</h2>
-<h3>Jorgea-moraless@unilibre.edu.co</h3>
+<h2>Planetas</h2>
+
+<div>
+  <table>
+    <tr>
+      <th>Planeta</th>
+      <th class="especial">Distancia al sol</th>
+      <th>Cantidad Lunas</th>
+      <th>Masa</th>
+    </tr>
+    <tr *ngFor="let planeta of planetas">
+      <td>{{planeta.nombre}}</td>
+      <td>{{planeta.distancia}}</td>
+      <td>{{planeta.lunas}}</td>
+      <td>{{planeta.masa}}</td>
+    </tr>
+  </table>
+</div>
+
 
 <router-outlet></router-outlet>

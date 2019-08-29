@@ -2,6 +2,14 @@
     text-align: center;
 }
 
+th{
+    width: 100px;
+}
+
+.especial{
+    width: 200px;
+}
+
 .welcome{
     margin: 5%;
 }
