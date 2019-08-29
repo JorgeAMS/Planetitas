@@ -3,22 +3,38 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <br>
+  <h2>Planetas</h2>
 </div>
-<h2>Planetas</h2>
 
 <div>
-  <table>
+  <table class="my_table">
     <tr>
       <th>Planeta</th>
       <th class="especial">Distancia al sol</th>
       <th>Cantidad Lunas</th>
       <th>Masa</th>
+      <th>Anillos</th>
+      <th>Tipo Planeta</th>
     </tr>
-    <tr *ngFor="let planeta of planetas">
+    <tr *ngFor="let planeta of planetas"
+        [ngClass]="{rocket_planet: planeta.tipo =='Rocoso' , gas_planet: planeta.tipo=='Gaseoso'}">
       <td>{{planeta.nombre}}</td>
       <td>{{planeta.distancia}}</td>
       <td>{{planeta.lunas}}</td>
       <td>{{planeta.masa}}</td>
+      <td [ngSwitch]="planeta.anillos">
+        <span *ngSwitchCase=1>Si</span>
+        <span *ngSwitchCase=2>No</span>
+      </td>
+      <td>{{planeta.tipo}}</td>
+      <!--
+
+        
+        [ngClass]="{gas_planet: planeta.tipo=='Gaseoso'}"
+
+        [ngClass]="{colorsitos: (i + 1) % 2 !=0}"
+      -->
     </tr>
   </table>
 </div>
